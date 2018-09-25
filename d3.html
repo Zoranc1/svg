@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>D3 and SVG</h1>
+    <div id="svg-goes-here"></div>
+        <script>
+        
+        // let myNumbers = [40, 70, 40, 5, 20];
+        // let w = 50 + (myNumbers.length * 30);
+        // let h = 200;
+        // let colorArray =["red","blue","green","yellow","orange"];
+
+        // let myChart = d3.select("#svg-goes-here")
+        //     .append("svg")
+        //     .attr("width", w)
+        //     .attr("height", h)
+
+        // myChart.selectAll("rect")
+        //     .data(myNumbers)
+        //     .enter()
+        //     .append("rect")
+        //     .attr("x", function(d, i) {
+        //         return i * 20;
+        //     })
+        //     .attr("y", function(d) {
+        //         return h - d;
+        //     })
+        //     .attr("width", 19)
+        //     .attr("height", function(d) {
+        //         return d;
+        //     })
+        //     .attr("fill", function(d,i) {
+        //         return colorArray[i];
+        //     })
+            // script---
+        let data = [40, 60, 40, 30, 20];
+        let w = 50 + (data.length * 100);
+        let h = 200;
+        let colorArray =["red","blue","green","yellow","orange"];
+
+        let svg = d3.select("#svg-goes-here")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h)
+
+        svg.selectAll("circle")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("cx", function(d, i) {
+                return 50 + (i * 100);
+            })
+            .attr("cy", h / 2)
+            .attr("r", function(d) {
+                return d})
+            .attr("fill", function(d,i) {
+                return colorArray[i];
+            })
+    //         });---script
+        
+    </script>
+</body>
+
+</html>
